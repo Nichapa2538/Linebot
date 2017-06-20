@@ -8,9 +8,9 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 
 //convert
-$natural pH = 7 ;
-$acidic pH = 6 ;
-$alkaline pH = 10 ;	
+$Natural pH = 7 ;
+$Acidic pH = 6 ;
+$Alkaline pH = 10 ;	
 	
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -40,7 +40,7 @@ if (!is_null($events['events'])) {
 			if (strtoupper($text) == "PH"){		
 				$messages = [
 				'type' => 'text',
-				'text' => "pH "."Natural pH :".$Natural pH."\n"." Acidic pH :".$acidic pH. "\n"."Alkaline pH :".$alkaline pH];
+				'text' => "pH "."Natural pH :".$Natural pH."\n"." Acidic pH :".$Acidic pH. "\n"."Alkaline pH :".$Alkaline pH];
 				
 			}
 			
