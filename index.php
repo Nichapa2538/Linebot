@@ -8,8 +8,8 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 
 //convert
-$base = 6
-$acid = 10	
+$base = 6 ;
+$acid = 10 ;	
 	
 if (!is_null($events['events'])) {
 	// Loop through each event
