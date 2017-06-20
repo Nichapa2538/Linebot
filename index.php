@@ -23,16 +23,22 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "ไม่มีคำสั่งที่คุณพิมพ์ กรุณาพิมพ์ help เพื่อดูเมนู" 
+				'text' => "กรุณากรอกข้อความให้ถูกต้องคะ พิมพ์ HELP เพื่อดูรายการ" 
 					// "text"
 			];
 			if (strtoupper($text) == "HELP"){		
 				$messages = [
 				'type' => 'text',
-				'text' => "พิมพ์หมายเลข 1 เพื่อสถานะอากาศปัจจุบัน"."\n"."พิมพ์หมายเลข 2 ดูสถานที่ทั้งหมด"."\n"."พิมพ์หมายเลข 3 รายละเอียดสภาพอากาศ"
-			];
+				'text' => "ดูค่าPH พิมพ์ PH "."\n"		];
 				
-			}	
+			}
+			
+			if (strtoupper($text) == "PH"){		
+				$messages = [
+				'type' => 'text',
+				'text' => "ดูค่าPH พิมพ์ PH "."\n"."พิมพ์"		];
+				
+			}
 			
 					
 			
