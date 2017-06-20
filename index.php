@@ -8,6 +8,9 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 
 //convert
+$base = 6
+$acid = 10	
+	
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
@@ -29,14 +32,14 @@ if (!is_null($events['events'])) {
 			if (strtoupper($text) == "HELP"){		
 				$messages = [
 				'type' => 'text',
-				'text' => "ดูค่าPH พิมพ์ PH "."\n"		];
+				'text' => "ดูค่าPH พิมพ์ pH "."\n"		];
 				
 			}
 			
 			if (strtoupper($text) == "PH"){		
 				$messages = [
 				'type' => 'text',
-				'text' => "ดูค่าPH พิมพ์ PH "."\n"."พิมพ์"		];
+				'text' => "pH "."Base :".$base."\n"." Acid :".$acid	];
 				
 			}
 			
