@@ -1,4 +1,58 @@
-
+void Line_Notify(String message) ;
+#define LINE_TOKEN "Vtcjq5NYhVv9AXCCfiJVsRxwp02dhbK4VRGBs7T4HWa"
+#define SW D2
+String message = "I'm ESP8266";
+void setup() {
+pinMode(SW, INPUT);
+Serial.begin(9600);
+WiFi.mode(WIFI_STA);
+// connect to wifi.
+WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+Serial.print("connecting");
+while (WiFi.status() != WL_CONNECTED) {
+Serial.print(".");
+delay(500);
+}
+Serial.println();
+Serial.print("connected: ");
+Serial.println(WiFi.localIP());
+}
+void loop() {
+int sensor = analogRead(A0);
+message = "Now ";
+message += sensor;
+Line_Notify(message);
+delay(5000);
+}
+void Line_Notify(String message) {
+WiFiClientSecure client;
+if (!client.connect("notify-api.line.me", 443)) {
+Serial.println("connection failed");
+return; 
+}
+String req = "";
+req += "POST /api/notify HTTP/1.1\r\n";
+req += "Host: notify-api.line.me\r\n";
+req += "Authorization: Bearer " + String(LINE_TOKEN) + "\r\n";
+req += "Cache-Control: no-cache\r\n";
+//req += "User-Agent: ESP8266\r\n";
+req += "Content-Type: application/x-www-form-urlencoded\r\n";
+req += "Content-Length: " + String(String("message=" + message).length()) + "\r\n";
+req += "\r\n";
+req += "message=" + message;
+Serial.println(req);
+client.print(req);
+delay(20);
+// Serial.println("-------------");
+while(client.connected()) {
+String line = client.readStringUntil('\n');
+if (line == "\r") {
+break;
+}
+//Serial.println(line);
+}
+// Serial.println("-------------");
+}
 <?php
 $access_token = 'kbLZyUFX6yQoQAgLMCvnd3Aq/kK5Rdelck9Q062do9wqcBmnWGXB5kkosTKhJiNBYRamAF/iPzMk3aa6M+7yvnaC4Ln/rg5hT/DPxbIcFcr25/DuAILX3maUg4A8FwRYrMdzEOd10MYBfJf8VemfJwdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
