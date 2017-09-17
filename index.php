@@ -9,8 +9,8 @@ $events = json_decode($content, true);
 $ph = file_get_contents('https://api.thingspeak.com/channels/321156/fields/1/last.txt');
 //convert 
 $Natural = 5 ;
-$Acidic = 6 ;
-$Alkaline = 10 ;	
+//$Acidic = 6 ;
+//$Alkaline = 10 ;	
 	
 if (!is_null($events['events'])) {
 	// Loop through each event
