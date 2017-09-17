@@ -8,7 +8,7 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 
 //convert
-$Natural = 7 ;
+$Natural = 5 ;
 $Acidic = 6 ;
 $Alkaline = 10 ;	
 	
