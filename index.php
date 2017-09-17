@@ -7,7 +7,7 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 // Validate parsed JSON data
 $ph = file_get_contents('https://api.thingspeak.com/channels/321156/fields/1/last.txt');
-//convert
+//convert 
 $Natural = 5 ;
 $Acidic = 6 ;
 $Alkaline = 10 ;	
