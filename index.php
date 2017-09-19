@@ -11,7 +11,10 @@ $ph = file_get_contents('https://api.thingspeak.com/channels/321156/fields/2/las
 $Natural = 5 ;
 //$Acidic = 6 ;
 //$Alkaline = 10 ;	
-	
+
+ static unsigned long samplingTime = millis();
+    static unsigned long printTime = millis();
+    static float pHValue,voltage;
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
