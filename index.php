@@ -12,9 +12,6 @@ $Natural = 5 ;
 //$Acidic = 6 ;
 //$Alkaline = 10 ;	
 
- static unsigned long samplingTime = millis();
-    static unsigned long printTime = millis();
-    static float pHValue,voltage;
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
