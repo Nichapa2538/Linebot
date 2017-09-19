@@ -38,7 +38,7 @@ if (!is_null($events['events'])) {
 			if (strtoupper($text) == "PH"){		
 				$messages = [
 				'type' => 'text',
-				'text' => "Natural pH : ".$ph ."\n"."Acidic pH : ".$Acidic ."\n"."Alkaline pH : ".$Alkaline ];
+				'text' => "Natural pH : ".$ph ."\n"];
 				
 			}
 			
