@@ -23,24 +23,6 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			// Build message to reply back
-			$messages = [
-				'type' => 'text',
-				'text' => "กรุณากรอกข้อความให้ถูกต้องคะ พิมพ์ HELP เพื่อดูรายการ" 
-					// "text"
-			];
-			if (strtoupper($text) == "HELP"){		
-				$messages = [
-				'type' => 'text',
-				'text' => "ดูค่าPH พิมพ์ pH "."\n"		];
-				
-			}
-			
-			if (strtoupper($text) == "PH"){		
-				$messages = [
-				'type' => 'text',
-				'text' => "Natural pH : ".$ph ."\n"];
-				
-			}
 			
 			
 			
