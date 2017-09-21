@@ -13,12 +13,7 @@ $date = date("h:i:sa");
 $Natural = 5 ;
 //$Acidic = 6 ;
 //$Alkaline = 10 ;	
-$token = 'YOUR LINE NOTIFY TOKEN';
-$ln = new KS\Line\LineNotify($token);
 
-$text = 'Hello Line Notify';
-$ln->send($text);
-		
 
 if (!is_null($events['events'])) {
 	// Loop through each event
