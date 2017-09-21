@@ -7,7 +7,7 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 $ph = file_get_contents('https://api.thingspeak.com/channels/321156/fields/2/last.txt');
 //$ph = file_get_contents('https://api.thingspeak.com/channels/321156/created_at/last.txt');
-
+$date = date("Y-m-d");
 //convert 
 $Natural = 5 ;
 //$Acidic = 6 ;
@@ -39,7 +39,7 @@ if (!is_null($events['events'])) {
 			if (strtoupper($text) == "PH"){		
 				$messages = [
 				'type' => 'text',
-				'text' => "Natural pH : ".$ph ."\n"];
+				'text' => "Natural pH : ".$ph ." $date\n"];
 				
 			}
 			
