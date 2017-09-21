@@ -7,7 +7,7 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 $ph = file_get_contents('https://api.thingspeak.com/channels/321156/fields/2/last.txt');
 //$ph = file_get_contents('https://api.thingspeak.com/channels/321156/created_at/last.txt');
-$date = date("Y-m-d");
+$date = date("h:i:sa");
 //convert 
 $Natural = 5 ;
 //$Acidic = 6 ;
