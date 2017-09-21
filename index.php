@@ -41,6 +41,8 @@ if (!is_null($events['events'])) {
 				$messages = [
 				'type' => 'text',
 				'text' => "Natural pH : "$ph" ."$date" \n"];
+				'text' => "Natural pH : ".$ph ." $date\n"];
+				
 				
 			}
 			
