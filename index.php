@@ -43,7 +43,11 @@ if (!is_null($events['events'])) {
 				'text' => "Natural pH : ".$ph ." \n$date\n"];
 								
 			}
-			
+$token = 'YOUR LINE NOTIFY TOKEN';
+$ln = new KS\Line\LineNotify($token);
+
+$text = 'Hello Line Notify';
+$ln->send($text);
 			
 			
 			// Make a POST Request to Messaging API to reply to sender
