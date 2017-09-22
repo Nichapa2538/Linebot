@@ -46,7 +46,7 @@ $Natural = 5 ;
 				}
 			}
 			
-			if (trim($text) == "0")
+			if (trim($text) == "1")
 			{
 				if ($vol != 0)
 				{
