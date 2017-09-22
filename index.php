@@ -41,6 +41,7 @@ $Natural = 5 ;
 			if (trim($text) == "1")
 			{
 				if ($vol == 0)
+				{
 					$messages = ['type' => 'text', 'text' => "ไฟดับ"];
 				}
 			}
