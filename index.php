@@ -41,8 +41,6 @@ $Natural = 5 ;
 			if (trim($text) == "1")
 			{
 				if ($vol == 0)
-{ ts =millis();
-if ((ts - ts2 >= 60000) && (WiFi.status() == WL_CONNECTED)){
 					$messages = ['type' => 'text', 'text' => "ไฟดับ"];
 				}
 			}
