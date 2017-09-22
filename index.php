@@ -6,7 +6,6 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 // Validate parsed JSON data
 $ph = file_get_contents('https://api.thingspeak.com/channels/321156/fields/2/last.txt');
-//$ph = file_get_contents('https://api.thingspeak.com/channels/321156/created_at/last.txt');
 $vol = file_get_contents('https://api.thingspeak.com/channels/321156/fields/1/last.txt');
 date_default_timezone_set("Asia/Bangkok");
 $date = date("h:i:sa");
