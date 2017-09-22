@@ -50,7 +50,7 @@ $Natural = 5 ;
 			{
 				if ($vol != 0)
 				{
-					$messages = ['type' => 'text', 'text' => "ปกติ"];
+					$messages = ['type' => 'text', 'text' => "ปกติมาก"];
 				}
 			}
 			
