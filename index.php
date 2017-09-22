@@ -38,7 +38,7 @@ $Natural = 5 ;
 				'text' => "ดูค่าPH พิมพ์ pH "."\n"		];
 				
 			}
-			//if (trim($text) == "1")
+			if (trim($text) == "1")
 			{
 				if ($vol == 0)
 				{
