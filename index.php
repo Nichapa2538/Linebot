@@ -38,21 +38,15 @@ $Natural = 5 ;
 				'text' => "ดูค่าPH พิมพ์ pH "."\n"		];
 				
 			}
-			if ($text == "1"){
-				if($vol > 0){
-				$messages = [
-				'type' => 'text',
-				'text' => "ไฟดับ"."\n"		];
-				}	
+			if (trim($text) == "1")
+			{
+				if ($vol == 0)
+				{
+					$messages = ['type' => 'text', 'text' => "ค่าแสง : " . "มีแสงน้อย \t" . " กลางคืน"];
+				}
 			}
 			
-			if ($text == "1"){
-				if($vol != 0){
-				$messages = [
-				'type' => 'text',
-				'text' => "ไฟมี"."\n"		];
-				}	
-			}
+			
 			
 			if (strtoupper($text) == "PH"){		
 				$messages = [
