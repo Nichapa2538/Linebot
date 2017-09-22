@@ -38,6 +38,16 @@ $Natural = 5 ;
 				'text' => "ดูค่าPH พิมพ์ pH "."\n"		];
 				
 			}
+			if (strtoupper($text) == "Vol"){
+				if($vol == 0){
+				$messages = [
+				'type' => 'text',
+				'text' => "ไฟดับ"."\n"		];
+				}else {$messages = [
+				'type' => 'text',
+				'text' => "ไม่ดับ"."\n"		];}
+				
+			}
 			
 			if (strtoupper($text) == "PH"){		
 				$messages = [
