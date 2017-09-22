@@ -42,7 +42,7 @@ $Natural = 5 ;
 				if ($vol == 0)
 				{
 					$messages = ['type' => 'text', 'text' => "ไฟดับ"];
-					return $vol 
+					
 				}
 			}
 			
