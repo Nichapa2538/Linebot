@@ -42,11 +42,10 @@ $Natural = 5 ;
 			if (strtoupper($text) == "PH"){		
 				$messages = [
 				'type' => 'text',
-				'text' => "Natural pH : ".$ph ." \n$date\n"];
-								
+				'text' => "Natural pH : ".$ph ." \n$date\n"];				
+			} else {
+   				echo "Have a good night!";
 			}
-	
-			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
