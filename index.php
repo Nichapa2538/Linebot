@@ -38,7 +38,7 @@ $Natural = 5 ;
 				'text' => "ดูค่าPH พิมพ์ pH "."\n"		];
 				
 			}
-			if (strtoupper($text) == "voo"){
+			if ($text == "1"){
 				if($vol > 0){
 				$messages = [
 				'type' => 'text',
@@ -46,7 +46,7 @@ $Natural = 5 ;
 				}	
 			}
 			
-			if (strtoupper($text) == "voo"){
+			if ($text == "1"){
 				if($vol != 0){
 				$messages = [
 				'type' => 'text',
