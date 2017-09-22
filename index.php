@@ -42,11 +42,17 @@ $Natural = 5 ;
 			{
 				if ($vol == 0)
 				{
-					$messages = ['type' => 'text', 'text' => "ค่าแสง : " . "มีแสงน้อย \t" . " กลางคืน"];
+					$messages = ['type' => 'text', 'text' => "ไฟดับ"];
 				}
 			}
 			
-			
+			if (trim($text) == "1")
+			{
+				if ($vol != 0)
+				{
+					$messages = ['type' => 'text', 'text' => "ปกติ"];
+				}
+			}
 			
 			if (strtoupper($text) == "PH"){		
 				$messages = [
