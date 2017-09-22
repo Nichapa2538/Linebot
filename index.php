@@ -42,17 +42,12 @@ $Natural = 5 ;
 				if ($vol == 0)
 				{
 					$messages = ['type' => 'text', 'text' => "ไฟดับ"];
-					
-				}
+				}else {
+					$messages = ['type' => 'text', 'text' => "ไฟติด"];
+				
+					}
 			}
 			
-			if (trim($text) == "1")
-			{
-				if ($vol != 0)
-				{
-					$messages = ['type' => 'text', 'text' => "ปกติมาก"];
-				}
-			}
 			
 			if (strtoupper($text) == "PH"){		
 				$messages = [
