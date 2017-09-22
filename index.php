@@ -39,14 +39,19 @@ $Natural = 5 ;
 				
 			}
 			if (strtoupper($text) == "Vol"){
-				if($vol == 0){
+				if($vol > 0){
 				$messages = [
 				'type' => 'text',
 				'text' => "ไฟดับ"."\n"		];
-				}else {$messages = [
+				}	
+			}
+			
+			if (strtoupper($text) == "Vol"){
+				if($vol != 0){
+				$messages = [
 				'type' => 'text',
-				'text' => "ไม่ดับ"."\n"		];}
-				
+				'text' => "ไฟมี"."\n"		];
+				}	
 			}
 			
 			if (strtoupper($text) == "PH"){		
