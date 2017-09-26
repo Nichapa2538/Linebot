@@ -77,4 +77,4 @@ $Natural = 5 ;
 	
 }
 echo "OK";
-echo "Powed by lnwS4ND";
+
