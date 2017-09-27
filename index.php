@@ -57,6 +57,7 @@ $Natural = 5 ;
 			}
 		
 			// Make a POST Request to Messaging API to reply to sender
+			String http_request ="GET /update?api_key=56R40SCEGIX09EX0";
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
