@@ -1,6 +1,4 @@
                 <?php
-define('LINE_API',"https://notify-api.line.me/api/notify");
-define('LINE_TOKEN','kbLZyUFX6yQoQAgLMCvnd3Aq/kK5Rdelck9Q062do9wqcBmnWGXB5kkosTKhJiNBYRamAF/iPzMk3aa6M+7yvnaC4Ln/rg5hT/DPxbIcFcr25/DuAILX3maUg4A8FwRYrMdzEOd10MYBfJf8VemfJwdB04t89/1O/w1cDnyilFU=');
 $access_token = 'kbLZyUFX6yQoQAgLMCvnd3Aq/kK5Rdelck9Q062do9wqcBmnWGXB5kkosTKhJiNBYRamAF/iPzMk3aa6M+7yvnaC4Ln/rg5hT/DPxbIcFcr25/DuAILX3maUg4A8FwRYrMdzEOd10MYBfJf8VemfJwdB04t89/1O/w1cDnyilFU=';
                
                 // Get POST body content
@@ -16,31 +14,6 @@ $access_token = 'kbLZyUFX6yQoQAgLMCvnd3Aq/kK5Rdelck9Q062do9wqcBmnWGXB5kkosTKhJiN
                 $Natural = 5 ;
                 //$Acidic = 6 ;
                 //$Alkaline = 10 ;
-
-//line
-function notify_message($message){
-
-    $queryData = array('message' => $message);
-    $queryData = http_build_query($queryData,'','&');
-    $headerOptions = array(
-        'http'=>array(
-            'method'=>'POST',
-            'header'=> "Content-Type: application/x-www-form-urlencoded\r\n"
-            		  ."Authorization: Bearer ".LINE_TOKEN."\r\n"
-                      ."Content-Length: ".strlen($queryData)."\r\n",
-            'content' => $queryData
-        )
-    );
-    $context = stream_context_create($headerOptions);
-    $result = file_get_contents(LINE_API,FALSE,$context);
-    $res = json_decode($result);
-	return $res;
-}
-$res = notify_message($ph);
-var_dump($res);
-                //line end
-
-
                 if (!is_null($events['events'])) {
                 // Loop through each event
                 foreach ($events['events'] as $event) {
