@@ -2,7 +2,22 @@
 define('LINE_API',"https://notify-api.line.me/api/notify");
 define('LINE_TOKEN','kbLZyUFX6yQoQAgLMCvnd3Aq/kK5Rdelck9Q062do9wqcBmnWGXB5kkosTKhJiNBYRamAF/iPzMk3aa6M+7yvnaC4Ln/rg5hT/DPxbIcFcr25/DuAILX3maUg4A8FwRYrMdzEOd10MYBfJf8VemfJwdB04t89/1O/w1cDnyilFU=');
 $access_token = 'kbLZyUFX6yQoQAgLMCvnd3Aq/kK5Rdelck9Q062do9wqcBmnWGXB5kkosTKhJiNBYRamAF/iPzMk3aa6M+7yvnaC4Ln/rg5hT/DPxbIcFcr25/DuAILX3maUg4A8FwRYrMdzEOd10MYBfJf8VemfJwdB04t89/1O/w1cDnyilFU=';
-               //line
+               
+                // Get POST body content
+                $content = file_get_contents('php://input');
+                // Parse JSON
+                $events = json_decode($content, true);
+                // Validate parsed JSON data
+                $ph = file_get_contents('https://api.thingspeak.com/channels/321156/fields/2/last.txt');
+                //$ph = file_get_contents('https://api.thingspeak.com/cha.../321156/created_at/last.txt');
+                date_default_timezone_set("Asia/Bangkok");
+                $date = date("h:i:sa");
+                //convert 
+                $Natural = 5 ;
+                //$Acidic = 6 ;
+                //$Alkaline = 10 ;
+
+//line
 function notify_message($message){
 
     $queryData = array('message' => $message);
@@ -24,19 +39,8 @@ function notify_message($message){
 $res = notify_message($ph);
 var_dump($res);
                 //line end
-                // Get POST body content
-                $content = file_get_contents('php://input');
-                // Parse JSON
-                $events = json_decode($content, true);
-                // Validate parsed JSON data
-                $ph = file_get_contents('https://api.thingspeak.com/channels/321156/fields/2/last.txt');
-                //$ph = file_get_contents('https://api.thingspeak.com/cha.../321156/created_at/last.txt');
-                date_default_timezone_set("Asia/Bangkok");
-                $date = date("h:i:sa");
-                //convert 
-                $Natural = 5 ;
-                //$Acidic = 6 ;
-                //$Alkaline = 10 ;	
+
+
                 if (!is_null($events['events'])) {
                 // Loop through each event
                 foreach ($events['events'] as $event) {
