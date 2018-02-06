@@ -23,19 +23,7 @@ $access_token = 'kbLZyUFX6yQoQAgLMCvnd3Aq/kK5Rdelck9Q062do9wqcBmnWGXB5kkosTKhJiN
                 $text = $event['message']['text'];
                 // Get replyToken
                 $replyToken = $event['replyToken'];
- String req = "";
-  req += "POST /api/notify HTTP/1.1\r\n";
-  req += "Host: notify-api.line.me\r\n";
-  req += "Authorization: Bearer " + String("Wqk4w3nErGQlQEACym3gOKYx07xLuOfUOqsTeTUTq9k") + "\r\n";
-  req += "Cache-Control: no-cache\r\n";
-  //req += "User-Agent: ESP8266\r\n";
-  req += "Content-Type: application/x-www-form-urlencoded\r\n";
-  req += "Content-Length: " + String(String("message=" + message).length()) + "\r\n";
-  req += "\r\n";
-  req += "message=" + message;
-  Serial.println(req);
-  client.print(req);
-  delay(30);
+ 
                 // Build message to reply back
                 $messages = [
                 'type' => 'text',
